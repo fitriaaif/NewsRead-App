@@ -1,0 +1,142 @@
+﻿<Window x:Class="NewsReadApp.View.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewsReadApp.View"
+        mc:Ignorable="d"
+        Title="Setting" Height="600" Width="500"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="White"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="0"
+            Background="White"
+                BorderThickness="3"
+                Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#007CC7" Offset="0"/>
+                <GradientStop Color="#007CC7" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="131*"/>
+                <RowDefinition Height="69*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="SETTING"
+                       Foreground="#12232E"
+                       FontSize="10"
+                       FontFamily="Roboto"
+                       Grid.Column="0"
+                       VerticalAlignment="Top"
+                       Margin="10,10,0,0"/>
+            <Button x:Name="Back" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnBack_Click" Width="35" Height="35" Margin="20,40,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/back.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Rectangle Height="140" Width="140" VerticalAlignment="Top" Margin="177,72,177,0">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/profile.png" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Username"
+                       FontSize="17"
+                       FontFamily="Roboto"
+                       FontWeight="Medium"
+                       VerticalAlignment="Top" Margin="0,225,0,0" HorizontalAlignment="Center">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <Border CornerRadius="15,15,15,15"
+                    Background="White"
+                    Margin="37,267,37,30" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.2" Direction="270" BlurRadius="8" ShadowDepth="2"/>
+                </Border.Effect>
+            </Border>
+            <Rectangle Height="20" Width="20" VerticalAlignment="Top" Margin="69,314,405,0">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/user1.png" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Username"
+                       FontSize="15"
+                   Foreground="Black"
+                       FontFamily="Roboto"
+                       FontWeight="Medium"
+                       VerticalAlignment="Top" Margin="69,291,0,0" HorizontalAlignment="Left">
+            </TextBlock>
+            <TextBox x:Name="txtUser"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Roboto"
+                             Background="Transparent"
+                             Foreground="Black"
+                             CaretBrush="#007CC7"
+                             BorderBrush="#007CC7"
+                             BorderThickness="0,0,0,2"
+                             Height="20"
+                             VerticalContentAlignment="Center"
+                             Margin="69,324,69,45" TextChanged="txtUser_TextChanged"/>
+            <Rectangle Height="20" Width="20" VerticalAlignment="Top" Margin="69,387,405,0" Grid.RowSpan="2">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/pass1.png" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Password"
+            FontSize="15"
+            Foreground="Black"
+            FontFamily="Roboto"
+            FontWeight="Medium"
+            VerticalAlignment="Top" Margin="69,364,0,0" HorizontalAlignment="Left"/>
+            <TextBox x:Name="txtPass"
+            FontSize="13"
+            FontWeight="Medium"
+            FontFamily="Roboto"
+            Background="Transparent"
+            Foreground="Black"
+            CaretBrush="#007CC7"
+            BorderBrush="#007CC7"
+            BorderThickness="0,0,0,2"
+            Height="20"
+            VerticalContentAlignment="Center"
+            Margin="69,7,69,178" Grid.Row="1"/>
+            <Rectangle Height="17" Width="17" VerticalAlignment="Top" Margin="70,72,406,0" Grid.Row="1">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/envelope.png" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Email"
+            FontSize="15"
+            Foreground="Black"
+            FontFamily="Roboto"
+            FontWeight="Medium"
+            VerticalAlignment="Top" Margin="69,45,0,0" HorizontalAlignment="Left" Grid.Row="1"/>
+            <TextBox x:Name="txtEmail"
+            FontSize="13"
+            FontWeight="Medium"
+            FontFamily="Roboto"
+            Background="Transparent"
+            Foreground="Black"
+            CaretBrush="#007CC7"
+            BorderBrush="#007CC7"
+            BorderThickness="0,0,0,2"
+            Height="20"
+            VerticalContentAlignment="Center"
+            Margin="69,79,69,106" Grid.Row="1"/>
+            <Border CornerRadius="25,25,25,25"
+                    Background="#007CC7"
+                    Height="40"
+                    Width="120"
+                    Margin="187,116,187,49" Grid.Row="1"/>
+            <Button x:Name="Save" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnSave_Click" Width="70" Height="30" Margin="0,121,0,0" Grid.Row="1" 
+                Content="SAVE" Foreground="White" Background="Transparent" FontWeight="Bold" FontFamily="Roboto" FontSize="17" />
+        </Grid>
+    </Border>
+</Window>

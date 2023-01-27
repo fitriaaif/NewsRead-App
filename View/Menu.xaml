@@ -1,0 +1,324 @@
+﻿<Window x:Class="NewsReadApp.View.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewsReadApp.View"
+        mc:Ignorable="d"
+        Title="Menu" Height="800" Width="1200"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="White"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="0"
+            Background="White"
+                BorderThickness="1"
+                Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#007CC7" Offset="0"/>
+                <GradientStop Color="#007CC7" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="136"/>
+                <RowDefinition Height="563*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="215"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="110*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="MENU"
+                       Foreground="#12232E"
+                       FontSize="10"
+                       FontFamily="Roboto"
+                       Grid.Column="0"
+                       VerticalAlignment="Top"
+                       Margin="10,10,0,0"/>
+
+            <Button x:Name="btnMinimize"
+                    BorderThickness="0"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="20"
+                    FontFamily="Roboto"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnMinimize_Click" Margin="221,0,32,106">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#007CC7"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4DA8DA"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="24" Height="24"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnClose"
+                    BorderThickness="0"
+                    Content="x"
+                    Foreground="White"
+                    FontSize="13"
+                    FontFamily="Roboto"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnClose_Click" Margin="247,0,5,106">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Maroon"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="MediumVioletRed"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="24" Height="24"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Image Source="/Images/logo.png" Margin="0,4,0,632" Grid.RowSpan="2"/>
+            <Button x:Name="Home" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnMenu_Click" Width="30" Height="30" Margin="0,59,0,0" Grid.Row="1" RenderTransformOrigin="0.433,1.24">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/dashboard.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="SavedNews" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnSavedNews_Click" Width="30" Height="30" Margin="0,144,0,0" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/book.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Setting" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnSetting_Click" Width="30" Height="30" Margin="0,475,0,0" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/settings.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Exit" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnExit_Click" Width="25" Height="25"  Grid.Row="1" Margin="0,563,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/exit.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Rectangle HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="70" Grid.Column="1" Margin="28,37,0,0">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/dawn.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Prime Time News"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontFamily="Roboto"
+                       FontWeight="Medium"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,4,202,0" Grid.Row="1"/>
+            <Border CornerRadius="15,15,15,15"
+                    Background="#12232E"
+                    Width="600"
+                    Margin="49,43,57,334" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            </Border>
+            <Rectangle Height="263" VerticalAlignment="Top" Grid.Column="1" Margin="384,53,71,0" Grid.Row="1" RadiusX="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News1.jpeg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Jokowi inaugurates&#xD;&#xA;Sheikh Zayed Grand&#xD;&#xA;Mosque in Solo"
+                       Foreground="White"
+                       FontSize="24"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="91,76,357,0" Grid.Row="1" Height="91"/>
+            <TextBlock Text="Indonesian President Joko Widodo (Jokowi)&#xD;&#xA;inaugurated the Sheikh Zayed Grand Mosque&#xD;&#xA;on Jalan Ahmad Yani, Gilingan Village, Banjarsari&#xD;&#xA;District..."
+                       Foreground="White"
+                       FontSize="12"
+                       FontFamily="Roboto"
+                       FontWeight="Thin"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="91,179,357,0" Grid.Row="1" Height="62"/>
+            <Border CornerRadius="15,15,15,15"
+                    Background="White"
+                    Height="30"
+                    Width="90"
+                    Margin="91,266,525,366" Grid.Column="1" Grid.Row="1"/>
+            <Button x:Name="ViewNews" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnViewNews_Click" Width="70" Height="30" Margin="101,266,0,0" Grid.Row="1" 
+                    Content="Read Now" Grid.Column="1" Background="Transparent" FontWeight="DemiBold" FontFamily="Roboto" FontSize="12" >
+            </Button>
+            <TextBlock Text="Headlines"
+                       Foreground="Black"
+                       FontSize="18"
+                       FontFamily="Roboto"
+                       FontWeight="Medium"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,354,202,0" Grid.Row="1"/>
+            <Border CornerRadius="15,15,15,15"
+                    Background="White"
+                    Margin="49,395,366,30" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.2" Direction="270" BlurRadius="8" ShadowDepth="2"/>
+                </Border.Effect>
+            </Border>
+            <Rectangle Height="136" VerticalAlignment="Top" Grid.Column="1" Margin="63,410,381,0" Grid.Row="1" RadiusX="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News2.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Semarang City&#xD;&#xA;welcomes New&#xD;&#xA;Year 2023 as&#xD;&#xA;floods hit"
+                       Foreground="Black"
+                       FontSize="12"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="2"
+                       VerticalAlignment="Top" Margin="167,143,15,0" Height="65" Grid.Row="1"/>
+            <Rectangle HorizontalAlignment="Left" Height="758" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" 
+                       StrokeThickness="1" Margin="213,40,0,0">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Rectangle HorizontalAlignment="Left" Height="758" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" 
+                       StrokeThickness="1" Margin="705,40,0,0" Grid.Column="1" Grid.ColumnSpan="2">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="2" Margin="14,116,0,0" VerticalAlignment="Top" Width="670">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Label Grid.Column="1" Content="Morning," HorizontalAlignment="Left" Margin="116,64,0,0" VerticalAlignment="Top" Width="102"
+                   FontFamily="Roboto"
+                   FontSize="22"
+                   FontWeight="Medium" HorizontalContentAlignment="Center"/>
+            <Label Grid.Column="1" Content="Rose" HorizontalAlignment="Left" Margin="215,64,0,0" VerticalAlignment="Top" Width="82"
+                   FontFamily="Roboto"
+                   FontSize="22"
+                   FontWeight="Medium" Foreground="#007CC7"/>
+            <Rectangle Grid.Column="2" HorizontalAlignment="Center" Height="2" VerticalAlignment="Top" Width="244" Grid.Row="1" Margin="0,265,0,0">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Rectangle Height="77" VerticalAlignment="Top" Grid.Column="2" Margin="15,64,120,0" RadiusX="10" Grid.RowSpan="2">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News4.jpeg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="BMKG ends&#xD;&#xA;tsunami early&#xD;&#xA;warning in&#xD;&#xA;Maluku"
+                       Foreground="Black"
+                       FontSize="12"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="2"
+                       VerticalAlignment="Top" Margin="167,71,15,0" Height="66" Grid.RowSpan="2"/>
+            <Rectangle Height="76" VerticalAlignment="Top" Grid.Column="2" Margin="15,32,120,0" RadiusX="10" Grid.Row="1">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News5.jpeg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Lato-lato&#xD;&#xA;becomes new&#xD;&#xA;sensation in&#xD;&#xA;Indonesia"
+                       Foreground="Black"
+                       FontSize="12"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="2"
+                       VerticalAlignment="Top" Margin="167,38,15,0" Height="65" Grid.Row="1"/>
+            <Rectangle Height="76" VerticalAlignment="Top" Grid.Column="2" Margin="15,137,120,0" RadiusX="10" Grid.Row="1">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News6.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Joe Biden and Elon Musk will come to&#xD;&#xA;Bali for G20"
+                       Foreground="Black"
+                       FontSize="14"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="63,556,381,0" Height="40" Grid.Row="1"/>
+            <TextBlock Text="Source Media"
+                       FontSize="9"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="63,605,581,0" Height="10" Grid.Row="1">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <TextBlock Text="2022"
+                       FontSize="9"
+                       FontFamily="Roboto"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="0,605,409,0" Height="10" Grid.Row="1" HorizontalAlignment="Right" FontWeight="Regular">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="#FF007CC7" Opacity="1"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <Border CornerRadius="15,15,15,15"
+                    Background="White"
+                    Margin="372,395,43,30" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.2" Direction="270" BlurRadius="8" ShadowDepth="2"/>
+                </Border.Effect>
+            </Border>
+            <Rectangle Height="136" VerticalAlignment="Top" Grid.Column="1" Margin="387,410,57,0" Grid.Row="1" RadiusX="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News3.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="YG Entertainment announces Bang Ye&#xD;&#xA;Dam and Mashiho’s departure..."
+                       Foreground="Black"
+                       FontSize="14"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="387,556,57,0" Height="40" Grid.Row="1"/>
+            <TextBlock Text="Source Media"
+                       FontSize="9"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="387,605,262,0" Height="10" Grid.Row="1">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <TextBlock Text="2022"
+                       FontSize="9"
+                       FontFamily="Roboto"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="0,605,95,0" Height="10" Grid.Row="1" HorizontalAlignment="Right" FontWeight="Regular">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="#FF007CC7" Opacity="1"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <Button x:Name="More" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnMore_Click" Width="30" Height="30" Margin="0,235,0,0" Grid.Row="1" Grid.Column="2" RenderTransformOrigin="3.233,0.289">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/arrow.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,176 @@
+﻿<Window x:Class="NewsReadApp.View.NewsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewsReadApp.View"
+        mc:Ignorable="d"
+        Title="NewsView" Height="800" Width="1200"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="White"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="0"
+            Background="White"
+                BorderThickness="1"
+                Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#007CC7" Offset="0"/>
+                <GradientStop Color="#007CC7" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="136"/>
+                <RowDefinition Height="563*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="215"/>
+                <ColumnDefinition Width="280*"/>
+                <ColumnDefinition Width="110*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnMinimize"
+                    BorderThickness="0"
+                    Content="-"
+                    Foreground="White"
+                    FontSize="20"
+                    FontFamily="Roboto"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnMinimize_Click" Margin="221,0,32,106">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#007CC7"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4DA8DA"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="24" Height="24"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnClose"
+                    BorderThickness="0"
+                    Content="x"
+                    Foreground="White"
+                    FontSize="13"
+                    FontFamily="Roboto"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Click="btnClose_Click" Margin="247,0,5,106">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Maroon"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="MediumVioletRed"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="24" Height="24"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Image Source="/Images/logo.png" Margin="0,4,0,632" Grid.RowSpan="2"/>
+            <Button x:Name="Home" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnMenu_Click" Width="30" Height="30" Margin="0,59,0,0" Grid.Row="1" RenderTransformOrigin="0.433,1.24">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/dashboard.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="SavedNews" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnSavedNews_Click" Width="30" Height="30" Margin="0,144,0,0" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/book.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Setting" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnSetting_Click" Width="30" Height="30" Margin="0,475,0,0" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/settings.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Exit" HorizontalAlignment="Center" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnExit_Click" Width="25" Height="25"  Grid.Row="1" Margin="0,563,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/exit.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Back" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}" Click="btnBack_Click" Width="40" Height="40" Margin="20,40,0,0" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/back.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <TextBlock Text="Source Media"
+                       Foreground="Black"
+                       FontSize="16"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,104,570,0"/>
+            <TextBlock Text="14 Nov, 2022"
+                       Foreground="Black"
+                       FontSize="16"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="225,104,381,0"/>
+            <Rectangle Height="307" VerticalAlignment="Top" Margin="36,87,44,0" Grid.Row="1" RadiusX="10" IsEnabled="False" Grid.ColumnSpan="2" Grid.Column="1">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Images/News1.jpeg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock Text="Jokowi inaugurates Sheikh Zayed Grand Mosque in Solo"
+                       Foreground="Black"
+                       FontSize="30"
+                       FontFamily="Roboto"
+                       FontWeight="Bold"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,10,0,0" Height="46" HorizontalAlignment="Left" Width="903" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <TextBlock Text="Indonesian President Joko Widodo (Jokowi) inaugurated the Sheikh Zayed Grand Mosque on Jalan Ahmad Yani,&#xA;Gilingan Village, Banjarsari District, Solo, Central Java, on Monday (14/11/2022)."
+                       Foreground="Black"
+                       FontSize="17"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,430,65,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <TextBlock Text="President Jokowi and the UAE President Sheikh Mohamed bin Zayed Al Nahyan arrived at the Sheikh Zayed Grand&#xA;Mosque in Solo at around 07.25 WIB and went straight into the mosque to pray."
+                       Foreground="Black"
+                       FontSize="17"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,490,65,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <TextBlock Text="President Jokowi and the President of the UAE then left the mosque to plant trees in the mosque's yard. President&#xA;Jokowi briefly greeted local residents, then immediately left the location together with the UAE President Sheikh&#xA;Mohamed bin Zayed."
+                       Foreground="Black"
+                       FontSize="17"
+                       FontFamily="Roboto"
+                       FontWeight="Regular"
+                       Grid.Column="1"
+                       VerticalAlignment="Top" Margin="36,552,65,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+            <Rectangle HorizontalAlignment="Left" Height="758" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" 
+                       StrokeThickness="1" Margin="213,40,0,0">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Black" Opacity="0.2"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+        </Grid>
+    </Border>
+</Window>
